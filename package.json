@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "A money tracker app with LIFF and Google Sheets.",
   "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
+"scripts": {
+  "start": "node server.js",
+  "build": "echo 'No build step required'"
+},
   "dependencies": {
     "express": "^4.17.1"
   },
