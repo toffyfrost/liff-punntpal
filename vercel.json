@@ -11,5 +11,16 @@
       "src": "/(.*)",
       "dest": "server.js"
     }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self' vercel.live; script-src 'self' 'unsafe-inline' https://code.jquery.com https://cdn.jsdelivr.net https://static.line-scdn.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data: https://profile.line-scdn.net; connect-src 'self' https://api.line.me https://script.google.com;"
+        }
+      ]
+    }
   ]
 }
