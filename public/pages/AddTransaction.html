@@ -1,0 +1,60 @@
+<div id="add-transaction-page" class="p-2">
+    <form id="transaction-form">
+        <div class="mb-3">
+            <label for="trans-date" class="form-label">วันที่</label>
+            <input type="date" class="form-control" id="trans-date" required>
+        </div>
+        
+        <div class="mb-3">
+            <label class="form-label">ประเภทรายการ</label>
+            <div>
+                <input type="radio" class="btn-check" name="trans-type" id="type-expense" value="รายจ่าย" autocomplete="off" checked>
+                <label class="btn btn-outline-danger" for="type-expense">รายจ่าย</label>
+
+                <input type="radio" class="btn-check" name="trans-type" id="type-income" value="รายรับ" autocomplete="off">
+                <label class="btn btn-outline-success" for="type-income">รายรับ</label>
+
+                <input type="radio" class="btn-check" name="trans-type" id="type-transfer" value="โอนเงิน" autocomplete="off">
+                <label class="btn btn-outline-primary" for="type-transfer">โอนเงิน</label>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="trans-amount" class="form-label">จำนวนเงิน</label>
+            <input type="number" class="form-control" id="trans-amount" placeholder="0.00" step="0.01" required>
+        </div>
+
+        <!-- ส่วนของฟิลด์ที่เปลี่ยนตามประเภท -->
+        <div id="standard-fields">
+            <div class="mb-3">
+                <label for="trans-category" class="form-label">หมวดหมู่</label>
+                <select class="form-select" id="trans-category" required></select>
+            </div>
+            <div class="mb-3">
+                <label for="trans-account" class="form-label">บัญชี</label>
+                <select class="form-select" id="trans-account" required></select>
+            </div>
+        </div>
+
+        <div id="transfer-fields" style="display: none;">
+            <div class="mb-3">
+                <label for="trans-from-account" class="form-label">โอนจากบัญชี</label>
+                <select class="form-select" id="trans-from-account"></select>
+            </div>
+            <div class="mb-3">
+                <label for="trans-to-account" class="form-label">ไปยังบัญชี</label>
+                <select class="form-select" id="trans-to-account"></select>
+            </div>
+        </div>
+        <!-- จบส่วนของฟิลด์ที่เปลี่ยนตามประเภท -->
+
+        <div class="mb-3">
+            <label for="trans-description" class="form-label">คำอธิบาย (ไม่บังคับ)</label>
+            <textarea class="form-control" id="trans-description" rows="2"></textarea>
+        </div>
+
+        <div class="d-grid">
+            <button type="submit" class="btn btn-success btn-lg">บันทึกรายการ</button>
+        </div>
+    </form>
+</div>
