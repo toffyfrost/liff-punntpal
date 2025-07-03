@@ -1,10 +1,54 @@
-/* HTML: <div class="loader"></div> */
+/* 
+ * ส่วนนี้คือการจัดตำแหน่งให้ Overlay (พื้นหลังสีเทา) เต็มหน้าจอ
+ * และจัดให้ทุกอย่างที่อยู่ข้างใน (loader-container) อยู่ตรงกลางเป๊ะๆ
+*/
+#loading-overlay {
+    position: fixed; /* ยึดตำแหน่งไว้กับหน้าจอ ไม่เลื่อนตามการ scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f2f5; /* สีพื้นหลังเหมือน body */
+    z-index: 9999; /* ทำให้แสดงอยู่บนสุดเสมอ */
+    
+    /* --- หัวใจของการจัดกลาง --- */
+    display: flex; /* เปิดใช้งาน Flexbox */
+    justify-content: center; /* จัดให้อยู่กลางแนวนอน */
+    align-items: center; /* จัดให้อยู่กลางแนวตั้ง */
+    /* --------------------------- */
+    
+    flex-direction: column; /* จัดให้ของข้างในเรียงจากบนลงล่าง */
+    transition: opacity 0.3s ease-in-out; /* เพิ่ม effect ตอนหายไป */
+}
+
+/* 
+ * ส่วนนี้คือกล่องที่ครอบตัว loader และข้อความไว้ด้วยกัน
+*/
+.loader-container {
+    text-align: center; /* ทำให้ข้อความอยู่ตรงกลาง */
+}
+
+/* 
+ * ส่วนนี้คือข้อความใต้ loader
+*/
+#loading-text {
+    margin-top: 20px; /* ระยะห่างระหว่าง loader กับข้อความ */
+    font-size: 1rem;
+    color: #6c757d; /* สีเทา */
+    font-family: 'Sarabun', sans-serif; /* ใช้ฟอนต์เดียวกับแอป */
+}
+
+
+/* 
+ * โค้ด CSS ของตัว Loader ที่คุณให้มา (เหมือนเดิม)
+*/
 .loader {
   width: 80px;
   height: 40px;
   border-radius: 100px 100px 0 0;
   position: relative;
   overflow: hidden;
+  margin: 0 auto; /* จัดให้อยู่กลางแนวนอนภายใน container ของมันเอง */
 }
 .loader:before {
   content: "";

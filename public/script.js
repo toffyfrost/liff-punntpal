@@ -5,7 +5,7 @@
 // !!! --- กรุณากรอกข้อมูล 3 ส่วนนี้ --- !!!
 const LIFF_ID = "2007668164-KQRMyj2B";
 const GAS_URL = "https://script.google.com/macros/s/AKfycbwP50fjZK-bK1BsTE9ZtfCfAHFzxI-J-jITDLD8yqYg5tMQYteB4cl-Xw34OtLrDKe57w/exec";
-const SECRET_KEY = "Teer@sakSep1991";
+const SECRET_KEY = "Teer@sapSep1991";
 // !!! ------------------------------------ !!!
 
 // ตัวแปรส่วนกลางสำหรับเก็บข้อมูลของแอป
